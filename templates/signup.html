@@ -1,0 +1,74 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Sign Up | Park Me</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+
+  <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+</head>
+<body>
+
+    <header id="header" class="fixed-top d-flex align-items-center  header-transparent ">
+    
+        <div class="container d-flex align-items-center justify-content-between">
+
+          <div class="logo">
+            <h1><a href="/" style="color: black;">Park Me</a></h1>
+          </div>
+</div>
+</header>
+<div class="container">
+    {% if messages %}
+{% for message in messages %}
+<script>alert("{{ message }}")</script>
+{% endfor %}
+{% endif %}
+</div>
+    <div class="container">
+    <form method="post" action="signup">
+    {% csrf_token %}
+    <div class="formContainer" style="margin-top: 120px;">
+        <label for="fname"><b>First Name</b></label>
+    <input type="text" placeholder="First Name" id="fname" name="fname" required><br>
+    <label for="lname"><b>Last Name</b></label>
+    <input type="text" placeholder="Last Name" id="lname" name="lname" required><br>
+    <label for="username"><b>UserName</b></label>
+    <input type="text" placeholder="UserName" id="username" name="username" required><br>
+        <label for="email"><b>Email</b></label>
+    <input type="email" placeholder="Email" id="email"><br>
+    <label for="password"><b>Password</b></label>
+    <input type="password" placeholder="Password" id="password" name="password" required><br>
+    {% comment %} <button onclick="signUp()" id="signUp">SignUp</button> {% endcomment %}
+    <button type="submit">SignUp</button>
+    <!-- <button onclick="signIn()" id="signIn">LogIn</button> -->
+    <!-- <button onclick="signOut()" id="signOut">SignOut</button> -->
+</div>
+</form>
+</div>
+
+<h6 style="text-align: center;"><a href="login">Already have a account? Log In</a></h6>
+
+
+    
+</body>
+</html>

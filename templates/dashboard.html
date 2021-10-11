@@ -1,0 +1,307 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Park Me</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+
+  <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <link href="{% static 'assets/css/style1.css' %}" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+  <header id="header" class="fixed-top d-flex align-items-center  header-transparent ">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <h1><a href="/">Park Me</a></h1>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li class="dropdown"><a href="#"><span>Profile</span> <i class="bi bi-chevron-down"></i></a>
+          <ul>
+            <li><a class="nav-link scrollto" href="#">{{request.user}}</a></li>
+            <li><a id="signOut" class="nav-link scrollto" href="/">Logout</a></li>
+          </ul>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
+    <div id="heroCarousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="carousel">
+
+      <div class="carousel-item active">
+        <div class="carousel-container">
+          <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Park Me</span></h2>
+          <p class="animate__animated fanimate__adeInUp">Welcome to Online Parking Management System.<br>A smart vehicle parking system not only helps to look for parking but also saves time.
+          </p>
+          <div class="container">
+            <a href="#book" class="btn-get-started animate__animated animate__fadeInUp scrollto">Book</a>      
+            <a href="#show" class="btn-get-started animate__animated animate__fadeInUp scrollto">Show</a>      
+            <a href="#search" class="btn-get-started animate__animated animate__fadeInUp scrollto">Search</a>     
+            <a href="#remove" class="btn-get-started animate__animated animate__fadeInUp scrollto">Remove</a>     
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <main id="main">
+
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title" data-aos="zoom-out">
+          <h2>About</h2>
+          <p>What is Park Me?</p>
+        </div>
+
+        <div class="row content" data-aos="fade-up">
+          <div class="col-lg-6">
+            <p>
+              Park Me is a smart online vehicle parking system Which helps you to book a Parking online and not only helps to look for parking but also saves time.<br>It is an integrated form of parking system which can help with organization of vehicle in a more efficient way.
+            </p>
+            <ul>
+              <li><i class="ri-check-double-line"></i>Saves Time.</li>
+              <li><i class="ri-check-double-line"></i>Saves Space.</li>
+              <li><i class="ri-check-double-line"></i>No more Searching for your vehicle All will be in your device.</li>
+            </ul>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <p>
+              The Increasing population, leads to a greater number of private vehicles which drastically increases the number of parking space needed. So, a proper parking management system is needed.
+            </p>
+            <!-- <a href="#" class="btn-learn-more">Learn More</a> -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="book" class="book">
+      <div class="container">
+
+        <div class="section-title" data-aos="zoom-out">
+          <h2>Book</h2>
+          <p>Book My Vehicle</p>
+
+          <form>
+            <div class="form-group">
+                <input type="radio" id="Car" name="Vehicle Type" value="Car">
+<label for="Car">Car</label>
+<input type="radio" id="Bike" name="Vehicle Type" value="Bike">
+<label for="Bike">Bike</label>
+            <div>
+              <label for="name">Name: </label>
+              <input type="name" class="form-control" id="name" required>
+            </div>
+            <div class="form-group">
+              <label for="name">Vehicle Model: </label>
+              <input type="name" class="form-control" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Vehicle Number: </label>
+                <input type="name" class="form-control" id="name" required>
+              </div>
+
+              <label for="appt">Set Parking Time: </label>
+
+<input type="time" id="appt" name="appt"
+       min="09:00" max="18:00" required>
+            
+              <div class="text-center"><button type="submit">Book</button></div>
+          </form>
+
+        </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="Show" class="Show">
+        <div class="container">
+  
+          <div class="section-title" data-aos="zoom-out">
+            <h2>Display</h2>
+            <p>Display all Vehicles Data</p>
+  
+            <form>
+              <div class="form-group">
+                  <input type="radio" id="Car" name="Vehicle Type" value="Car">
+  <label for="Car">Car</label>
+  <input type="radio" id="Bike" name="Vehicle Type" value="Bike">
+  <label for="Bike">Bike</label>
+              
+                <div class="text-center"><button type="submit">Display</button></div>
+            </form>
+  
+          </div>
+          </div>
+  
+        </div>
+      </section>
+
+    <section id="search" class="search">
+        <div class="container">
+  
+          <div class="section-title" data-aos="zoom-out">
+            <h2>Search</h2>
+            <p>Search My Vehicle</p>
+  
+            <form>
+              <div class="form-group">
+                  <input type="radio" id="Car" name="Vehicle Type" value="Car">
+  <label for="Car">Car</label>
+  <input type="radio" id="Bike" name="Vehicle Type" value="Bike">
+  <label for="Bike">Bike</label>
+              <div>
+                <label for="name">Enter Token: </label>
+                <input type="name" class="form-control" id="name" required>
+              </div>
+              
+              
+                <div class="text-center"><button type="submit">Search</button></div>
+            </form>
+  
+          </div>
+          </div>
+  
+        </div>
+      </section>
+
+      <section id="remove" class="remove">
+        <div class="container">
+  
+          <div class="section-title" data-aos="zoom-out">
+            <h2>Remove</h2>
+            <p>Remove My Vehicle</p>
+  
+            <form>
+                <div class="form-group">
+                    <input type="radio" id="Car" name="Vehicle Type" value="Car">
+    <label for="Car">Car</label>
+    <input type="radio" id="Bike" name="Vehicle Type" value="Bike">
+    <label for="Bike">Bike</label>
+                <div>
+                  <label for="name">Enter Token: </label>
+                  <input type="name" class="form-control" id="name" required>
+                </div>
+              
+                <div class="text-center"><button type="submit">Remove</button></div>
+            </form>
+  
+          </div>
+          </div>
+  
+        </div>
+      </section>
+
+
+
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title" data-aos="zoom-out">
+          <h2>Contact</h2>
+          <p>Contact Us</p>
+        </div>
+
+          <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left">
+
+            <form action="/" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer">
+
+    <div class="container d-md-flex py-4">
+  
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright. All Rights Reserved
+        </div>
+        <div class="credits">
+          Developed by <a href="#hero">Park Me</a>
+        </div>
+      </div>
+      <div class="social-links text-center text-md-end pt-3 pt-md-0">
+        <a href="https://twitter.com/sachinl0har" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="https://www.instagram.com/sachinl0har/" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="https://github.com/sachinl0har" class="google-plus"><i class="bx bxl-github"></i></a>
+        <a href="https://www.linkedin.com/in/sachin-lohar-20b957205/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
