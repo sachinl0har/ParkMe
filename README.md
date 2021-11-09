@@ -7,7 +7,7 @@ The main problem with the existing parking system is that it cant tell how many 
 The Increasing population, leads to a greater number of private vehicles which drastically increases the number of parking space needed. So, a proper parking management system is needed.
 
 ## Optimizations
-1. The graphical user interface needs to be improved.
+1. The user interface needs to be improved.
 2. A datebase should be used to store the data such as SQL or MongoDB or Firebase.
 3. It needs a Admin Login and Size of slots so that admin can login and set the slots size.
 4. The Show window should be for Admin only as it shows the Secret Token also.
